@@ -6,11 +6,9 @@
 4. Sertakan Screenshot sebelum dan sesudah di modifikasi
 5. Tuliskan satu error yang pernah muncul, penyebabnya, dan Langkah perbaikannya
 
----
+## JAWAB
 
-# JAWAB
-
-### Contoh 1 (Kalkulator.php)
+### Contoh1 (Kalkulator.php)
 
 ```php
 <?php
@@ -70,10 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </html>
 ```
 
-#### Output
-![Output Kalkulator](images/image1.png)
+Output
 
----
+![Output Kalkulator](images/image1.png)
 
 ### Contoh 2 (biodata.php)
 
@@ -112,14 +109,13 @@ $mahasiswa = [
 </html>
 ```
 
-#### Output
+Output
+
 ![Output Biodata](images/image2.png)
 
----
+### Menambahkan  Operasi % pada Kalkulator 
 
-### Menambahkan Operasi % pada Kalkulator 
-
-Menambahkan pada `switch($operator)`
+Menambahkan pada switch($operator)
 ```php
         case '%':
              if ($b == 0) {
@@ -130,43 +126,39 @@ Menambahkan pada `switch($operator)`
             break;
 ```
 
-Menambahkan pada HTML `select name="operator"`
+Menambahkan pada html select name operator
 ```html
 <option value="%">%</option>
 ```
 
-![Modifikasi Kode Kalkulator](images/image3.png)
+![Menambahkan operator %](images/image3.png)
 
-#### Output
-![Output Modifikasi Kalkulator](images/image4.png)
+Output
 
----
+![Output Kalkulator %](images/image4.png)
 
 ### Menambahkan status “Aktif” pada Biodata
 
-![Modifikasi Kode Biodata](images/image5.png)
+![Menambahkan status Aktif](images/image5.png)
 
-#### Output
-![Output Modifikasi Biodata](images/image6.png)
+Output
 
----
+![Output Biodata Status Aktif](images/image6.png)
 
-### 5 Bagian Kode Penting
-
-#### 1. Pengecekan Method POST
+### 1. Pengecekan Method POST
 ```php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ```
 **Penjelasan:** Bagian ini digunakan untuk memastikan proses kalkulator hanya dijalankan ketika form dikirim menggunakan metode POST.
 
-#### 2. Pengambilan Input Pengguna
+### 2. Pengambilan Input Pengguna
 ```php
 $a = (float) ($_POST['a'] ?? 0);
 $b = (float) ($_POST['b'] ?? 0);
 ```
 **Penjelasan:** Kode tersebut mengambil nilai dari input a dan b yang dikirim melalui form, kemudian mengubahnya menjadi tipe data float agar dapat digunakan dalam operasi matematika.
 
-#### 3. Percabangan switch 
+### 3. Percabangan switch 
 ```php
 switch ($operator) {
     case '+':
@@ -177,9 +169,9 @@ switch ($operator) {
         break;
 }
 ```
-**Penjelasan:** `switch` digunakan untuk menentukan operasi matematika berdasarkan operator yang dipilih oleh pengguna.
+**Penjelasan:** switch digunakan untuk menentukan operasi matematika berdasarkan operator yang dipilih oleh pengguna.
 
-#### 4. Function statusKelulusan()
+### 4. Function statusKelulusan()
 ```php
 function statusKelulusan(float $ipk): string
 {
@@ -190,7 +182,7 @@ function statusKelulusan(float $ipk): string
 ```
 **Penjelasan:** Function ini menentukan predikat mahasiswa berdasarkan nilai IPK. Penggunaan function membuat kode lebih terstruktur dan dapat digunakan kembali.
 
-#### 5. Perulangan foreach
+### 5. Perulangan foreach
 ```php
 <?php foreach ($mahasiswa as $kunci => $nilai): ?>
     <li>
@@ -199,26 +191,18 @@ function statusKelulusan(float $ipk): string
     </li>
 <?php endforeach; ?>
 ```
-**Penjelasan:** `foreach` digunakan untuk membaca setiap data pada array `$mahasiswa` dan menampilkannya ke halaman HTML secara otomatis. Dengan cara ini, ketika field baru ditambahkan ke array, data tersebut dapat langsung ikut ditampilkan.
+**Penjelasan:** foreach digunakan untuk membaca setiap data pada array $mahasiswa dan menampilkannya ke halaman HTML secara otomatis. Dengan cara ini, ketika field baru ditambahkan ke array, data tersebut dapat langsung ikut ditampilkan.
 
----
+### Sebelum 
 
-### Screenshot Sebelum dan Sesudah Modifikasi
+![Sebelum Biodata](images/image7.png)
 
-#### Sebelum
-![Sebelum Modifikasi Biodata](images/image7.png)
+![Sebelum Kalkulator](images/image8.png)
 
-![Sebelum Modifikasi Kalkulator](images/image8.png)
+### Sesudah
 
-#### Sesudah
-![Sesudah Modifikasi Kalkulator](images/image9.png)
+![Sesudah Kalkulator](images/image9.png)
 
-![Sesudah Modifikasi Biodata](images/image10.png)
+![Sesudah Biodata](images/image10.png)
 
----
-
-### Error dan Penanganan
-
-**Error:** Program tidak berjalan ketika kode sudah benar.  
-**Penyebab:** File tidak masuk di xampp (`htdocs`).  
-**Perbaikan:** Memindahkan directory file ke `xampp/htdocs`.
+Errornya Adalah program tidak berjalan Ketika Kode sudah benar, penyebabnya adalah file tidak masuk di xampp, perbaikannya Adalah memindahkan directory file ke xampp htdocs
