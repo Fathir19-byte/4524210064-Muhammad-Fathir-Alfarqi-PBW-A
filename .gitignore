@@ -1,4 +1,6 @@
 *.pdf
+*.docx
+Petunjuk/
 vendor/
 node_modules/
 .env
